@@ -27,17 +27,34 @@ class Owner
     @pets[:dogs] << Dog.new(dog_name)
   end
 
-
   def walk_dogs
-    Dog.mood = "happy"
+    @pets.collect do |species, number|
+      if species == :dogs
+        instances.each do |dog|
+          dog.mood = "happy"
+        end
+      end
+    end
   end
 
   def play_with_cats
-    Cat.mood = "happy"
+    @pets.collect do |species, number|
+      if species == :cats
+        instances.each do |cat|
+          cat.mood = "happy"
+        end
+      end
+    end
   end
 
   def feed_fish
-    Fish.mood = "happy"
+    @pets.collect do |species, number|
+      if species == :fishes
+        instances.each do |fish|
+          fish.mood = "happy"
+        end
+      end
+    end
   end
 
   def self.all
