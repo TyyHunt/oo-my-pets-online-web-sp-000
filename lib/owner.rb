@@ -66,6 +66,13 @@ class Owner
     end
   end
 
+  def list_pets
+    dogs_num = @pets[:dogs].size
+    cats_num = @pets[:cats].size
+    fish_num = @pets[:fishes].size
+    return "I have #{fish_num} fish, #{dogs_num} dog(s), and #{cats_num} cat(s)."
+  end
+
   def self.all
     @@all
   end
